@@ -29,7 +29,7 @@ FROM
   production.products p
 GROUP BY
   1
-;
+;students
 
 -- the product_name and list price from the products table where the product name begins with "Trek"
 -- and the list price is less than or equal to 200 dollars.
@@ -105,29 +105,20 @@ ORDER BY
 
 
 -- Let's analyze store 3 since it had the most order rejections. Find the staff contact information that work at that store.
-SELECT 
-  s.staff_id, 
-  s.first_name, 
-  s.last_name, 
-  s.email, 
-  s.phone
-FROM 
-  sales.staffs s 
-WHERE 
-  s.store_id = 3;
+  
   
 -- Merge the order details together with the staff information so you know which orders to ask about! 
 
-SELECT 
-  *
-FROM 
-  sales.staffs s
-INNER JOIN
-  sales.orders o
-ON
-  s.staff_id = o.staff_id
-WHERE 
-  s.store_id = 3;  
+-- SELECT 
+--   *
+-- FROM 
+--   sales.staffs s
+-- INNER JOIN products
+--   sales.orders o
+-- ON
+--   s.staff_id = o.staff_id
+-- WHERE 
+--   s.store_id = 3;  
   
 -- How many orders per staff? Look at not only store 3.
 SELECT 
